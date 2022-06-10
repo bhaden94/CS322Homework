@@ -4,6 +4,14 @@ body {
     padding-bottom: 20px;
 }
 
+h1, h2, h3, h4 {
+    color: white !important;
+}
+
+p, li, address {
+    color: #f7f7f7 !important;
+}
+
 /* Wrapping element */
 /* Set some basic padding to keep content from hitting the edges */
 .body-content {
@@ -41,4 +49,24 @@ input[type="select"] {
 .navbar-inverse .navbar-toggle:focus {
     background-color: #777;
     border-color: #fff
+}
+
+.gardening-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: -1;
+    filter: brightness(0.5);
+}
+
+.gardening-page {
+}
+
+.bg-dark {
+    background-color: #292b2c;
+}
+
+.jumbotron {
+    background-color: #1c1e1e;
 }

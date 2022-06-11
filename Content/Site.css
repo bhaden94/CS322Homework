@@ -51,22 +51,37 @@ input[type="select"] {
     border-color: #fff
 }
 
-.gardening-bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: -1;
-    filter: brightness(0.5);
-}
-
-.gardening-page {
-}
-
 .bg-dark {
     background-color: #292b2c;
 }
 
 .jumbotron {
     background-color: #1c1e1e;
+}
+
+.header {
+    height: 500px;
+    position: relative;
+}
+
+.header-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    filter: brightness(0.8);
+    height: 100%;
+    width: 100%;
+    background: radial-gradient(transparent, black), url('../images/garden-bg.jpg') left top / cover no-repeat;
+}
+
+.header-text{
+    position: absolute;
+    margin: 0;
+    padding: 5% 0 2% 5%;
+    filter: initial;
+}
+
+li img {
+    width: 100px;
+    height: 100px;
 }

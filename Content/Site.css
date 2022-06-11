@@ -8,7 +8,7 @@ h1, h2, h3, h4 {
     color: white !important;
 }
 
-p, li, address {
+p, li, address, th {
     color: #f7f7f7 !important;
 }
 
@@ -81,7 +81,7 @@ input[type="select"] {
     filter: initial;
 }
 
-li img {
+td img {
     width: 100px;
     height: 100px;
 }

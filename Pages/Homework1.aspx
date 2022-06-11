@@ -5,36 +5,32 @@
             <div class="header-img"></div>
             <h1 class="header-text">Gardening</h1>
         </div>
-        
+
         <h2>Plants</h2>
-            <ul>
-                <li>
-                    <p>Sunflower</p>
-                    <img src="../Images/sunflower.jpg" />
-                </li>
-                <li>
-                    <p>Rose</p>
-                    <img src="../Images/rose.jpg" />
-                </li>
-                <li>
-                    <p>Tulip</p>
-                    <img src="../Images/tulip.jpg" />
-                </li>
-                <li>
-                    <p>American Merigold</p>
-                    <img src="../Images/american-merigold.jpg" />
-                </li>
-                <li>
-                    <p>Lavender</p>
-                    <img src="../Images/lavender.jpg" />
-                </li>
-            </ul>
+        <table class="table">
+            <tr>
+                <th class="text-center">Sunflower</th>
+                <th class="text-center">Rose</th>
+                <th class="text-center">Tulip</th>
+                <th class="text-center">American Merigold</th>
+                <th class="text-center">Lavender</th>
+            </tr>
+            <tr>
+                <td class="text-center"><img src="../Images/sunflower.jpg" alt="sunflower" /></td>
+                <td class="text-center"><img src="../Images/rose.jpg" alt="rose" /></td>
+                <td class="text-center"><img src="../Images/tulip.jpg" alt="tulip" /></td>
+                <td class="text-center"><img src="../Images/american-merigold.jpg" alt="american merigold" /></td>
+                <td class="text-center"><img src="../Images/lavender.jpg" alt="lavender " /></td>
+            </tr>
+        </table>
+
         <h2>Supplies</h2>
             <ul>
                 <li>Soil</li>
                 <li>Seeds</li>
                 <li>Potting</li>
             </ul>
+
         <h2>Tools</h2>
             <ul>
                 <li>Rake</li>

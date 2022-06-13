@@ -12,35 +12,116 @@
                 ID="UserNameFieldValidator"
                 runat="server"
                 ControlToValidate="UserNameTextBox"
-                ErrorMessage="User Name field blank"
-                Display="Dynamic"
-            >
-                Please enter User Name.
+                ErrorMessage="Please enter User Name."
+                Display="Dynamic">
+                *
             </asp:RequiredFieldValidator>
             <asp:CustomValidator
                 ID="UserNameLengthFieldValidator"
                 runat="server"
                 EnableClientScript="true"
                 OnServerValidate="UserNameLength_Validate"
-                ErrorMessage="User name not 6 characters"
-                Display="Dynamic"
-            >
-                Please make username longer than six characters.
+                ErrorMessage="Please make username longer than six characters."
+                Display="Dynamic">
+                *
             </asp:CustomValidator>
         </div>
 
         <div class="form-group">
-            <asp:Label ID="AddressLabel" AssociatedControlID="AddressTextBox" runat="server">Address</asp:Label>
-            <asp:TextBox ID="AddressTextBox" runat="server">
+            <asp:Label ID="AddressLine1Label" AssociatedControlID="AddressLine1TextBox" runat="server">Address Line 1</asp:Label>
+            <asp:TextBox ID="AddressLine1TextBox" runat="server">
             </asp:TextBox>
             <asp:RequiredFieldValidator
-                ID="AddressFieldValidator"
+                ID="AddressLine1FieldValidator"
                 runat="server"
-                ControlToValidate="AddressTextBox"
-                ErrorMessage="Address field blank"
-                Display="Dynamic"
-            >
-                Please enter an address.
+                ControlToValidate="AddressLine1TextBox"
+                ErrorMessage="Please enter a street address."
+                Display="Dynamic">
+                *
+            </asp:RequiredFieldValidator>
+
+            <asp:Label ID="AddressLine2Label" AssociatedControlID="AddressLine2TextBox" runat="server">Address</asp:Label>
+            <asp:TextBox ID="AddressLine2TextBox" runat="server">
+            </asp:TextBox>
+
+            <asp:Label ID="CityLabel" AssociatedControlID="CityTextBox" runat="server">City</asp:Label>
+            <asp:TextBox ID="CityTextBox" runat="server">
+            </asp:TextBox>
+            <asp:RequiredFieldValidator
+                ID="CityFieldValidator"
+                runat="server"
+                ControlToValidate="CityTextBox"
+                ErrorMessage="Please enter a city"
+                Display="Dynamic">
+                *
+            </asp:RequiredFieldValidator>
+
+            <%--BEGIN STATE DROPDOWN LIST--%>
+            <asp:DropDownList ID="StateDropDownList" runat="server">
+                <asp:ListItem Value="AL">Alabama</asp:ListItem>
+                <asp:ListItem Value="AK">Alaska</asp:ListItem>
+                <asp:ListItem Value="AZ">Arizona</asp:ListItem>
+                <asp:ListItem Value="AR">Arkansas</asp:ListItem>
+                <asp:ListItem Value="CA">California</asp:ListItem>
+                <asp:ListItem Value="CO">Colorado</asp:ListItem>
+                <asp:ListItem Value="CT">Connecticut</asp:ListItem>
+                <asp:ListItem Value="DC">District of Columbia</asp:ListItem>
+                <asp:ListItem Value="DE">Delaware</asp:ListItem>
+                <asp:ListItem Value="FL">Florida</asp:ListItem>
+                <asp:ListItem Value="GA">Georgia</asp:ListItem>
+                <asp:ListItem Value="HI">Hawaii</asp:ListItem>
+                <asp:ListItem Value="ID">Idaho</asp:ListItem>
+                <asp:ListItem Value="IL">Illinois</asp:ListItem>
+                <asp:ListItem Value="IN">Indiana</asp:ListItem>
+                <asp:ListItem Value="IA">Iowa</asp:ListItem>
+                <asp:ListItem Value="KS">Kansas</asp:ListItem>
+                <asp:ListItem Value="KY">Kentucky</asp:ListItem>
+                <asp:ListItem Value="LA">Louisiana</asp:ListItem>
+                <asp:ListItem Value="ME">Maine</asp:ListItem>
+                <asp:ListItem Value="MD">Maryland</asp:ListItem>
+                <asp:ListItem Value="MA">Massachusetts</asp:ListItem>
+                <asp:ListItem Value="MI">Michigan</asp:ListItem>
+                <asp:ListItem Value="MN">Minnesota</asp:ListItem>
+                <asp:ListItem Value="MS">Mississippi</asp:ListItem>
+                <asp:ListItem Value="MO">Missouri</asp:ListItem>
+                <asp:ListItem Value="MT">Montana</asp:ListItem>
+                <asp:ListItem Value="NE">Nebraska</asp:ListItem>
+                <asp:ListItem Value="NV">Nevada</asp:ListItem>
+                <asp:ListItem Value="NH">New Hampshire</asp:ListItem>
+                <asp:ListItem Value="NJ">New Jersey</asp:ListItem>
+                <asp:ListItem Value="NM">New Mexico</asp:ListItem>
+                <asp:ListItem Value="NY">New York</asp:ListItem>
+                <asp:ListItem Value="NC">North Carolina</asp:ListItem>
+                <asp:ListItem Value="ND">North Dakota</asp:ListItem>
+                <asp:ListItem Value="OH">Ohio</asp:ListItem>
+                <asp:ListItem Value="OK">Oklahoma</asp:ListItem>
+                <asp:ListItem Value="OR">Oregon</asp:ListItem>
+                <asp:ListItem Value="PA">Pennsylvania</asp:ListItem>
+                <asp:ListItem Value="RI">Rhode Island</asp:ListItem>
+                <asp:ListItem Value="SC">South Carolina</asp:ListItem>
+                <asp:ListItem Value="SD">South Dakota</asp:ListItem>
+                <asp:ListItem Value="TN">Tennessee</asp:ListItem>
+                <asp:ListItem Value="TX">Texas</asp:ListItem>
+                <asp:ListItem Value="UT">Utah</asp:ListItem>
+                <asp:ListItem Value="VT">Vermont</asp:ListItem>
+                <asp:ListItem Value="VA">Virginia</asp:ListItem>
+                <asp:ListItem Value="WA">Washington</asp:ListItem>
+                <asp:ListItem Value="WV">West Virginia</asp:ListItem>
+                <asp:ListItem Value="WI">Wisconsin</asp:ListItem>
+                <asp:ListItem Value="WY">Wyoming</asp:ListItem>
+            </asp:DropDownList>
+            <%--END STATE DROPDOWN LIST--%>
+
+            <asp:Label ID="ZipCodeLabel" AssociatedControlID="ZipCodeTextBox" runat="server">Zip Code</asp:Label>
+            <asp:TextBox ID="ZipCodeTextBox" runat="server">
+            </asp:TextBox>
+            <asp:RequiredFieldValidator
+                ID="ZipCodeFieldValidator"
+                runat="server"
+                ControlToValidate="ZipCodeTextBox"
+                ErrorMessage="Please enter a zip code."
+                Display="Dynamic">
+                *
             </asp:RequiredFieldValidator>
         </div>
 
@@ -51,21 +132,19 @@
             <asp:RequiredFieldValidator
                 ID="RequiredFieldValidator1"
                 runat="server"
-                ControlToValidate="AddressTextBox"
-                ErrorMessage="Address field blank"
-                Display="Dynamic"
-            >
-                Please enter an address.
+                ControlToValidate="DateVisitedTextBox"
+                ErrorMessage="Please enter the date you visited our store."
+                Display="Dynamic">
+                *
             </asp:RequiredFieldValidator>
             <asp:CustomValidator
                 ID="DateVisitedValidator"
                 runat="server"
                 EnableClientScript="true"
                 OnServerValidate="DateVisited_Validate"
-                ErrorMessage="Date visited greater than the current date"
-                Display="Dynamic"
-            >
-                Please enter a date not set in the future.
+                ErrorMessage="Please enter a date not set in the future."
+                Display="Dynamic">
+                *
             </asp:CustomValidator>
         </div>
 
@@ -76,10 +155,9 @@
                 ID="PhoneNumberFieldValidator"
                 runat="server"
                 ControlToValidate="PhoneNumberTextBox"
-                ErrorMessage="Phone number field blank"
-                Display="Dynamic"
-            >
-                Please enter a phone number.
+                ErrorMessage="Please enter a phone number."
+                Display="Dynamic">
+                *
             </asp:RequiredFieldValidator>
         </div>
 
@@ -90,10 +168,9 @@
                 ID="EmailFieldValidator"
                 runat="server"
                 ControlToValidate="EmailTextBox"
-                ErrorMessage="Email field blank"
-                Display="Dynamic"
-            >
-                Please enter an email.
+                ErrorMessage="Please enter an email."
+                Display="Dynamic">
+                *
             </asp:RequiredFieldValidator>
         </div>
 
@@ -104,31 +181,30 @@
                 ID="PasswordFieldValidator"
                 runat="server"
                 ControlToValidate="PasswordTextBox"
-                ErrorMessage="Password field blank"
-                Display="Dynamic"
-            >
-                Please enter a password.
+                ErrorMessage="Please enter a password."
+                Display="Dynamic">
+                *
             </asp:RequiredFieldValidator>
         </div>
 
         <div class="form-group">
             <asp:Label ID="GardeningChoicesLabel" AssociatedControlID="GardeningChoicesCheckboxes" runat="server">Gardening Interests</asp:Label>
-            <asp:CustomValidator
-                ID="CheckBoxRequired"
-                runat="server"
-                EnableClientScript="true"
-                OnServerValidate="GardeningChoices_Validate"
-                ErrorMessage="No interest chosen"
-                Display="Dynamic"
-            >
-                Please select at least one interest.
-            </asp:CustomValidator>
+
             <asp:CheckBoxList ID="GardeningChoicesCheckboxes" runat="server">
                 <asp:ListItem>Flowers</asp:ListItem>
                 <asp:ListItem>Vegetables</asp:ListItem>
                 <asp:ListItem>Fruits</asp:ListItem>
                 <asp:ListItem>Medicinal Plants</asp:ListItem>
             </asp:CheckBoxList>
+            <asp:CustomValidator
+                ID="CheckBoxRequired"
+                runat="server"
+                EnableClientScript="true"
+                OnServerValidate="GardeningChoices_Validate"
+                ErrorMessage="Please select at least one interest."
+                Display="Dynamic">
+                *
+            </asp:CustomValidator>
         </div>
 
         <div class="form-group">
@@ -157,15 +233,20 @@
                 ID="FeedbackFieldValidator"
                 runat="server"
                 ControlToValidate="FeedbackTextBox"
-                ErrorMessage="Feedback field blank"
-                Display="Dynamic"
-            >
-                Please enter feedback.
+                ErrorMessage="Please enter feedback."
+                Display="Dynamic">
+                *
             </asp:RequiredFieldValidator>
         </div>
 
         <asp:Button ID="SubmitForm" runat="server" Text="Submit" OnClick="SubmitForm_Click" ToolTip="Submit" />
         <br />
         <asp:Label ID="ValidMessageLabel" runat="server"></asp:Label>
+
+        <asp:ValidationSummary
+            ID="ValidationSummary"
+            DisplayMode="BulletList"
+            runat="server"
+            HeaderText="There are errors in your form" />
     </div>
 </asp:Content>

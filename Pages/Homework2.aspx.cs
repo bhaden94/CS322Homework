@@ -23,7 +23,12 @@ namespace BradyHaden.Pages
             {
                 ValidMessageLabel.Text = "Form is valid.";
                 UserNameTextBox.ReadOnly = true;
-                AddressTextBox.ReadOnly = true;
+                AddressLine1TextBox.ReadOnly = true;
+                AddressLine2TextBox.ReadOnly = true;
+                CityTextBox.ReadOnly = true;
+                StateDropDownList.Enabled = false;
+                ZipCodeTextBox.ReadOnly = true;
+                DateVisitedTextBox.ReadOnly = true;
                 PhoneNumberTextBox.ReadOnly = true;
                 EmailTextBox.ReadOnly = true;
                 PasswordTextBox.ReadOnly = true;

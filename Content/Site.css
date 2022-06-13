@@ -8,7 +8,7 @@ h1, h2, h3, h4 {
     color: white !important;
 }
 
-p, li, address, th {
+p, li, address, th, span {
     color: #f7f7f7 !important;
 }
 

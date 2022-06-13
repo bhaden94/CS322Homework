@@ -189,6 +189,7 @@
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Images\garden-bg.jpg" />
     <Content Include="Pages\Homework1.aspx" />
+    <Content Include="Pages\Homework2.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
@@ -364,6 +365,13 @@
     </Compile>
     <Compile Include="Pages\Homework1.aspx.designer.cs">
       <DependentUpon>Homework1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Homework2.aspx.cs">
+      <DependentUpon>Homework2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Homework2.aspx.designer.cs">
+      <DependentUpon>Homework2.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">

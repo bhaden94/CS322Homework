@@ -1,12 +1,12 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Homework2.aspx.cs" Inherits="BradyHaden.Pages.Homework2" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+    <h1>Visitor Signup Page</h1>
     <div id="FormDiv" runat="server">
 
         <div class="form-group">
             <asp:Label ID="UserNameLabel" AssociatedControlID="UserNameTextBox" runat="server">User Name</asp:Label>
             <asp:TextBox ID="UserNameTextBox" runat="server">
-                <%-- username --%>
             </asp:TextBox>
             <asp:RequiredFieldValidator
                 ID="UserNameFieldValidator"
@@ -17,12 +17,21 @@
             >
                 Please enter User Name.
             </asp:RequiredFieldValidator>
+            <asp:CustomValidator
+                ID="UserNameLengthFieldValidator"
+                runat="server"
+                EnableClientScript="true"
+                OnServerValidate="UserNameLength_Validate"
+                ErrorMessage="User name not 6 characters"
+                Display="Dynamic"
+            >
+                Please make username longer than six characters.
+            </asp:CustomValidator>
         </div>
 
         <div class="form-group">
             <asp:Label ID="AddressLabel" AssociatedControlID="AddressTextBox" runat="server">Address</asp:Label>
             <asp:TextBox ID="AddressTextBox" runat="server">
-                <%-- address --%>
             </asp:TextBox>
             <asp:RequiredFieldValidator
                 ID="AddressFieldValidator"
@@ -33,6 +42,31 @@
             >
                 Please enter an address.
             </asp:RequiredFieldValidator>
+        </div>
+
+        <div class="form-group">
+            <asp:Label ID="DateVisitedLabel" AssociatedControlID="DateVisitedTextBox" runat="server">Date Visited</asp:Label>
+            <asp:TextBox ID="DateVisitedTextBox" TextMode="Date" runat="server">
+            </asp:TextBox>
+            <asp:RequiredFieldValidator
+                ID="RequiredFieldValidator1"
+                runat="server"
+                ControlToValidate="AddressTextBox"
+                ErrorMessage="Address field blank"
+                Display="Dynamic"
+            >
+                Please enter an address.
+            </asp:RequiredFieldValidator>
+            <asp:CustomValidator
+                ID="DateVisitedValidator"
+                runat="server"
+                EnableClientScript="true"
+                OnServerValidate="DateVisited_Validate"
+                ErrorMessage="Date visited greater than the current date"
+                Display="Dynamic"
+            >
+                Please enter a date not set in the future.
+            </asp:CustomValidator>
         </div>
 
         <div class="form-group">
@@ -51,7 +85,7 @@
 
         <div class="form-group">
             <asp:Label ID="EmailLabel" AssociatedControlID="EmailTextBox" runat="server">Email</asp:Label>
-            <asp:TextBox ID="EmailTextBox" runat="server"></asp:TextBox>
+            <asp:TextBox ID="EmailTextBox" TextMode="Email" runat="server"></asp:TextBox>
             <asp:RequiredFieldValidator
                 ID="EmailFieldValidator"
                 runat="server"
@@ -65,12 +99,12 @@
 
         <div class="form-group">
             <asp:Label ID="PasswordLabel" AssociatedControlID="PasswordTextBox" runat="server">Password</asp:Label>
-            <asp:TextBox ID="PasswordTextBox" runat="server"></asp:TextBox>
+            <asp:TextBox ID="PasswordTextBox" TextMode="Password" runat="server"></asp:TextBox>
             <asp:RequiredFieldValidator
                 ID="PasswordFieldValidator"
                 runat="server"
                 ControlToValidate="PasswordTextBox"
-                ErrorMessage="Pasword field blank"
+                ErrorMessage="Password field blank"
                 Display="Dynamic"
             >
                 Please enter a password.
@@ -78,22 +112,28 @@
         </div>
 
         <div class="form-group">
-            <asp:Label ID="GardeningChoicesLabel" AssociatedControlID="GardeningChoicesCheckboxes" runat="server">Gardening Choices</asp:Label>
+            <asp:Label ID="GardeningChoicesLabel" AssociatedControlID="GardeningChoicesCheckboxes" runat="server">Gardening Interests</asp:Label>
+            <asp:CustomValidator
+                ID="CheckBoxRequired"
+                runat="server"
+                EnableClientScript="true"
+                OnServerValidate="GardeningChoices_Validate"
+                ErrorMessage="No interest chosen"
+                Display="Dynamic"
+            >
+                Please select at least one interest.
+            </asp:CustomValidator>
             <asp:CheckBoxList ID="GardeningChoicesCheckboxes" runat="server">
-                <%-- multi-select with somethingrelated to gardening --%>
-                <asp:ListItem>Item 1</asp:ListItem>
-                <asp:ListItem>Item 2</asp:ListItem>
-                <asp:ListItem>Item 3</asp:ListItem>
-                <asp:ListItem>Item 4</asp:ListItem>
-                <asp:ListItem>Item 5</asp:ListItem>
-                <asp:ListItem>Item 6</asp:ListItem>
+                <asp:ListItem>Flowers</asp:ListItem>
+                <asp:ListItem>Vegetables</asp:ListItem>
+                <asp:ListItem>Fruits</asp:ListItem>
+                <asp:ListItem>Medicinal Plants</asp:ListItem>
             </asp:CheckBoxList>
         </div>
 
         <div class="form-group">
             <asp:Label ID="BusinessArrivalLabel" AssociatedControlID="BusinessArrivalDropdown" runat="server">How you got here</asp:Label>
             <asp:DropDownList ID="BusinessArrivalDropdown" runat="server">
-                <%-- choose how they arrived at business --%>
                 <asp:ListItem>Bus</asp:ListItem>
                 <asp:ListItem>Car</asp:ListItem>
                 <asp:ListItem>Bike</asp:ListItem>
@@ -125,5 +165,7 @@
         </div>
 
         <asp:Button ID="SubmitForm" runat="server" Text="Submit" OnClick="SubmitForm_Click" ToolTip="Submit" />
+        <br />
+        <asp:Label ID="ValidMessageLabel" runat="server"></asp:Label>
     </div>
 </asp:Content>

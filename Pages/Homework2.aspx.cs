@@ -13,6 +13,15 @@ namespace BradyHaden.Pages
         {
             if (Page.IsPostBack)
             {
+                
+            }
+        }   
+
+        protected void SubmitForm_Click(object sender, EventArgs e)
+        {
+            if (Page.IsValid)
+            {
+                ValidMessageLabel.Text = "Form is valid.";
                 UserNameTextBox.ReadOnly = true;
                 AddressTextBox.ReadOnly = true;
                 PhoneNumberTextBox.ReadOnly = true;
@@ -20,19 +29,43 @@ namespace BradyHaden.Pages
                 PasswordTextBox.ReadOnly = true;
                 FeedbackTextBox.ReadOnly = true;
                 BusinessArrivalDropdown.Enabled = false;
-                foreach(ListItem checkBox in GardeningChoicesCheckboxes.Items) {
+                foreach (ListItem checkBox in GardeningChoicesCheckboxes.Items)
+                {
                     checkBox.Enabled = false;
                 }
                 foreach (ListItem radio in ContactPreferenceRadioButtons.Items)
                 {
                     radio.Enabled = false;
                 }
+            } else
+            {
+                ValidMessageLabel.Text = "Form is NOT valid.";
             }
-        }   
+        }
 
-        protected void SubmitForm_Click(object sender, EventArgs e)
+        protected void GardeningChoices_Validate(object sender, ServerValidateEventArgs e)
         {
-            System.Diagnostics.Debug.WriteLine(PhoneNumberTextBox.Text);
+            bool isValid = false;
+            foreach(ListItem checkBox in GardeningChoicesCheckboxes.Items)
+            {
+                if (checkBox.Selected)
+                {
+                    isValid = true;
+                }
+            }
+            e.IsValid = isValid;
+        }
+
+        protected void UserNameLength_Validate(object sender, ServerValidateEventArgs e)
+        {
+            e.IsValid = UserNameTextBox.Text.Length >= 6;
+        }
+
+        protected void DateVisited_Validate(object sender, ServerValidateEventArgs e)
+        {
+            DateTime dateVisited = Convert.ToDateTime(DateVisitedTextBox.Text).ToUniversalTime();
+            DateTime currentDate = DateTime.UtcNow.Date;
+            e.IsValid = dateVisited <= currentDate;
         }
     }
 }

@@ -51,6 +51,15 @@ namespace BradyHaden.Pages
         protected global::System.Web.UI.WebControls.RequiredFieldValidator UserNameFieldValidator;
 
         /// <summary>
+        /// UserNameLengthFieldValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CustomValidator UserNameLengthFieldValidator;
+
+        /// <summary>
         /// AddressLabel control.
         /// </summary>
         /// <remarks>
@@ -76,6 +85,42 @@ namespace BradyHaden.Pages
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator AddressFieldValidator;
+
+        /// <summary>
+        /// DateVisitedLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label DateVisitedLabel;
+
+        /// <summary>
+        /// DateVisitedTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox DateVisitedTextBox;
+
+        /// <summary>
+        /// RequiredFieldValidator1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
+
+        /// <summary>
+        /// DateVisitedValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CustomValidator DateVisitedValidator;
 
         /// <summary>
         /// PhoneNumberLabel control.
@@ -168,6 +213,15 @@ namespace BradyHaden.Pages
         protected global::System.Web.UI.WebControls.Label GardeningChoicesLabel;
 
         /// <summary>
+        /// CheckBoxRequired control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CustomValidator CheckBoxRequired;
+
+        /// <summary>
         /// GardeningChoicesCheckboxes control.
         /// </summary>
         /// <remarks>
@@ -247,5 +301,14 @@ namespace BradyHaden.Pages
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button SubmitForm;
+
+        /// <summary>
+        /// ValidMessageLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label ValidMessageLabel;
     }
 }

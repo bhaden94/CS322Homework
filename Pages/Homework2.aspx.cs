@@ -11,12 +11,28 @@ namespace BradyHaden.Pages
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Page.IsPostBack)
+            {
+                UserNameTextBox.ReadOnly = true;
+                AddressTextBox.ReadOnly = true;
+                PhoneNumberTextBox.ReadOnly = true;
+                EmailTextBox.ReadOnly = true;
+                PasswordTextBox.ReadOnly = true;
+                FeedbackTextBox.ReadOnly = true;
+                BusinessArrivalDropdown.Enabled = false;
+                foreach(ListItem checkBox in GardeningChoicesCheckboxes.Items) {
+                    checkBox.Enabled = false;
+                }
+                foreach (ListItem radio in ContactPreferenceRadioButtons.Items)
+                {
+                    radio.Enabled = false;
+                }
+            }
         }   
 
         protected void SubmitForm_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Debug.WriteLine("In submit form");
+            System.Diagnostics.Debug.WriteLine(PhoneNumberTextBox.Text);
         }
     }
 }

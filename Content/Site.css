@@ -4,13 +4,22 @@ body {
     padding-bottom: 20px;
 }
 
-h1, h2, h3, h4 {
+/*Dark mode CSS*/
+/*h1, h2, h3, h4 {
     color: white !important;
 }
 
-p, li, address, th, span {
+p, li, address, th, span, label {
     color: #f7f7f7 !important;
 }
+
+.bg-dark {
+    background-color: #292b2c;
+}
+
+.jumbotron {
+    background-color: #1c1e1e;
+}*/
 
 /* Wrapping element */
 /* Set some basic padding to keep content from hitting the edges */
@@ -51,14 +60,6 @@ input[type="select"] {
     border-color: #fff
 }
 
-.bg-dark {
-    background-color: #292b2c;
-}
-
-.jumbotron {
-    background-color: #1c1e1e;
-}
-
 .header {
     height: 500px;
     position: relative;
@@ -74,11 +75,12 @@ input[type="select"] {
     background: radial-gradient(transparent, black), url('../images/garden-bg.jpg') left top / cover no-repeat;
 }
 
-.header-text{
+.header-text {
     position: absolute;
     margin: 0;
     padding: 5% 0 2% 5%;
     filter: initial;
+    color: white !important;
 }
 
 td img {

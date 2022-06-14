@@ -15,18 +15,18 @@ namespace BradyHaden.Pages
             {
                 // build address string
                 string fullAddress = "";
-                if(AddressLine2TextBox.Text != null)
+                if(AddressLine2TextBox != null && AddressLine2TextBox.Text != "")
                 {
-                    fullAddress = "Address: " + AddressLine1TextBox.Text + ", " +
+                    fullAddress = AddressLine1TextBox.Text + ", " +
                         AddressLine2TextBox.Text + ", " +
                         CityTextBox.Text + ", " +
                         StateDropDownList.SelectedValue +
                         ZipCodeTextBox.Text;
                 } else
                 {
-                    fullAddress = "Address: " + AddressLine1TextBox.Text + ", " +
+                    fullAddress = AddressLine1TextBox.Text + ", " +
                         CityTextBox.Text + ", " +
-                        StateDropDownList.SelectedValue +
+                        StateDropDownList.SelectedValue + " " +
                         ZipCodeTextBox.Text;
                 }
                 // build gardening choices list

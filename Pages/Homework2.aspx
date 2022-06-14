@@ -40,7 +40,7 @@
                 *
             </asp:RequiredFieldValidator>
 
-            <asp:Label ID="AddressLine2Label" AssociatedControlID="AddressLine2TextBox" runat="server">Address</asp:Label>
+            <asp:Label ID="AddressLine2Label" AssociatedControlID="AddressLine2TextBox" runat="server">Address Line 2</asp:Label>
             <asp:TextBox ID="AddressLine2TextBox" runat="server">
             </asp:TextBox>
 
@@ -57,6 +57,7 @@
             </asp:RequiredFieldValidator>
 
             <%--BEGIN STATE DROPDOWN LIST--%>
+            <asp:Label ID="StateLabel" AssociatedControlID="StateDropDownList" runat="server">State</asp:Label>
             <asp:DropDownList ID="StateDropDownList" runat="server">
                 <asp:ListItem Value="AL">Alabama</asp:ListItem>
                 <asp:ListItem Value="AK">Alaska</asp:ListItem>
@@ -123,6 +124,18 @@
                 Display="Dynamic">
                 *
             </asp:RequiredFieldValidator>
+            <%--Source for regex. It validates both 5 digit and 5+4 digit zip codes.--%>
+            <%--https://www.oreilly.com/library/view/regular-expressions-cookbook/9781449327453/ch04s14.html--%>
+            <asp:RegularExpressionValidator
+                ID="ZipCodeRegexValidator"
+                runat="server"
+                ControlToValidate="ZipCodeTextBox"
+                ErrorMessage="Please correct the zip code format."
+                ValidationExpression="^[0-9]{5}(?:-[0-9]{4})?$"
+                Display="Dynamic"
+            >
+                *
+            </asp:RegularExpressionValidator>
         </div>
 
         <div class="form-group">
@@ -185,6 +198,18 @@
                 Display="Dynamic">
                 *
             </asp:RequiredFieldValidator>
+            <%--Regex came from this SO question--%>
+            <%--https://stackoverflow.com/a/19605207--%>
+            <asp:RegularExpressionValidator
+                ID="PasswordRegexValidator"
+                runat="server"
+                ControlToValidate="PasswordTextBox"
+                ErrorMessage="Password must be at least 8 characters long, contain one uppercase letter, one lowercase letter, one number, and one special character."
+                ValidationExpression="^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$"
+                Display="Dynamic"
+            >
+                *
+            </asp:RegularExpressionValidator>
         </div>
 
         <div class="form-group">
@@ -195,6 +220,7 @@
                 <asp:ListItem>Vegetables</asp:ListItem>
                 <asp:ListItem>Fruits</asp:ListItem>
                 <asp:ListItem>Medicinal Plants</asp:ListItem>
+                <asp:ListItem>Hemp</asp:ListItem>
             </asp:CheckBoxList>
             <asp:CustomValidator
                 ID="CheckBoxRequired"
@@ -223,6 +249,7 @@
             <asp:RadioButtonList ID="ContactPreferenceRadioButtons" runat="server" RepeatDirection="Horizontal">
                 <asp:ListItem Value="Email" Selected="True">Email</asp:ListItem>
                 <asp:ListItem Value="Phone">Phone</asp:ListItem>
+                <asp:ListItem Value="Letter">Letter</asp:ListItem>
             </asp:RadioButtonList>
         </div>
 
@@ -239,9 +266,8 @@
             </asp:RequiredFieldValidator>
         </div>
 
-        <asp:Button ID="SubmitForm" runat="server" Text="Submit" OnClick="SubmitForm_Click" ToolTip="Submit" />
+        <asp:Button ID="SubmitForm" CssClass="btn btn-primary" runat="server" Text="Submit" OnClick="SubmitForm_Click" ToolTip="Submit" />
         <br />
-        <asp:Label ID="ValidMessageLabel" runat="server"></asp:Label>
 
         <asp:ValidationSummary
             ID="ValidationSummary"
@@ -249,4 +275,6 @@
             runat="server"
             HeaderText="There are errors in your form" />
     </div>
+    <asp:Label ID="ValidMessageLabel" runat="server"></asp:Label>
+    <asp:Label ID="FormResults" runat="server"></asp:Label>
 </asp:Content>

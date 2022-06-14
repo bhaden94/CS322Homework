@@ -13,36 +13,31 @@ namespace BradyHaden.Pages
         {
             if (Page.IsPostBack)
             {
-                
+                // hide form and show success text
+                FormDiv.Visible = false;
+                FormResults.Text = "<br />" + "Here are your results: " + "<br />" +
+                  "User name: " + UserNameTextBox.Text + "<br />" +
+                  "Address: " + AddressLine1TextBox.Text + ", " +
+                    AddressLine2TextBox.Text + ", " +
+                    CityTextBox.Text + ", " +
+                    StateDropDownList.SelectedValue +
+                    ZipCodeTextBox.Text + "<br />" +
+                  "Date visited: " + DateVisitedTextBox.Text + "<br />" +
+                  "Phone number: " + PhoneNumberTextBox.Text + "<br />" +
+                  "Email: " + EmailTextBox.Text + "<br />" +
+                  //"Gardening choices: " + PhoneNumberTextBox.Text + "<br />" +
+                  "Contact preference: " + ContactPreferenceRadioButtons.SelectedValue + "<br />" +
+                  "Feedback given: " + FeedbackTextBox.Text + "<br />";
             }
-        }   
+        }
 
         protected void SubmitForm_Click(object sender, EventArgs e)
         {
             if (Page.IsValid)
             {
-                ValidMessageLabel.Text = "Form is valid.";
-                UserNameTextBox.ReadOnly = true;
-                AddressLine1TextBox.ReadOnly = true;
-                AddressLine2TextBox.ReadOnly = true;
-                CityTextBox.ReadOnly = true;
-                StateDropDownList.Enabled = false;
-                ZipCodeTextBox.ReadOnly = true;
-                DateVisitedTextBox.ReadOnly = true;
-                PhoneNumberTextBox.ReadOnly = true;
-                EmailTextBox.ReadOnly = true;
-                PasswordTextBox.ReadOnly = true;
-                FeedbackTextBox.ReadOnly = true;
-                BusinessArrivalDropdown.Enabled = false;
-                foreach (ListItem checkBox in GardeningChoicesCheckboxes.Items)
-                {
-                    checkBox.Enabled = false;
-                }
-                foreach (ListItem radio in ContactPreferenceRadioButtons.Items)
-                {
-                    radio.Enabled = false;
-                }
-            } else
+                ValidMessageLabel.Text = "Form Successfully Submitted!";
+            }
+            else
             {
                 ValidMessageLabel.Text = "Form is NOT valid.";
             }
@@ -51,7 +46,7 @@ namespace BradyHaden.Pages
         protected void GardeningChoices_Validate(object sender, ServerValidateEventArgs e)
         {
             bool isValid = false;
-            foreach(ListItem checkBox in GardeningChoicesCheckboxes.Items)
+            foreach (ListItem checkBox in GardeningChoicesCheckboxes.Items)
             {
                 if (checkBox.Selected)
                 {

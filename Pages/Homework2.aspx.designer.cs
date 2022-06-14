@@ -132,6 +132,15 @@ namespace BradyHaden.Pages
         protected global::System.Web.UI.WebControls.RequiredFieldValidator CityFieldValidator;
 
         /// <summary>
+        /// StateLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label StateLabel;
+
+        /// <summary>
         /// StateDropDownList control.
         /// </summary>
         /// <remarks>
@@ -166,6 +175,15 @@ namespace BradyHaden.Pages
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator ZipCodeFieldValidator;
+
+        /// <summary>
+        /// ZipCodeRegexValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator ZipCodeRegexValidator;
 
         /// <summary>
         /// DateVisitedLabel control.
@@ -285,6 +303,15 @@ namespace BradyHaden.Pages
         protected global::System.Web.UI.WebControls.RequiredFieldValidator PasswordFieldValidator;
 
         /// <summary>
+        /// PasswordRegexValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator PasswordRegexValidator;
+
+        /// <summary>
         /// GardeningChoicesLabel control.
         /// </summary>
         /// <remarks>
@@ -384,6 +411,15 @@ namespace BradyHaden.Pages
         protected global::System.Web.UI.WebControls.Button SubmitForm;
 
         /// <summary>
+        /// ValidationSummary control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ValidationSummary ValidationSummary;
+
+        /// <summary>
         /// ValidMessageLabel control.
         /// </summary>
         /// <remarks>
@@ -393,12 +429,12 @@ namespace BradyHaden.Pages
         protected global::System.Web.UI.WebControls.Label ValidMessageLabel;
 
         /// <summary>
-        /// ValidationSummary control.
+        /// FormResults control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ValidationSummary ValidationSummary;
+        protected global::System.Web.UI.WebControls.Label FormResults;
     }
 }

@@ -1,12 +1,15 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Homework2.aspx.cs" Inherits="BradyHaden.Pages.Homework2" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <h1>Visitor Signup Page</h1>
-    <div id="FormDiv" runat="server">
+    <div class="header">
+        <asp:Image ID="Hw2Image" runat="server" CssClass="header-img" ImageUrl="../images/hw2-garden-bg.jpg" />
+        <h1 class="header-text">Visitor Signup Page</h1>
+    </div>
+    <div id="FormDiv" class="form-div" runat="server">
 
-        <div class="form-group">
-            <asp:Label ID="UserNameLabel" AssociatedControlID="UserNameTextBox" runat="server">User Name</asp:Label>
-            <asp:TextBox ID="UserNameTextBox" runat="server">
+        <div class="input-group">
+            <asp:Label ID="UserNameLabel" AssociatedControlID="UserNameTextBox" runat="server" >User Name:&nbsp;</asp:Label>
+            <asp:TextBox ID="UserNameTextBox" runat="server" ToolTip="Please make your user name longer than six characters.">
             </asp:TextBox>
             <asp:RequiredFieldValidator
                 ID="UserNameFieldValidator"
@@ -28,7 +31,7 @@
         </div>
 
         <div class="form-group">
-            <asp:Label ID="AddressLine1Label" AssociatedControlID="AddressLine1TextBox" runat="server">Address Line 1</asp:Label>
+            <asp:Label ID="AddressLine1Label" AssociatedControlID="AddressLine1TextBox" runat="server">Address Line 1:&nbsp;</asp:Label>
             <asp:TextBox ID="AddressLine1TextBox" runat="server">
             </asp:TextBox>
             <asp:RequiredFieldValidator
@@ -39,12 +42,12 @@
                 Display="Dynamic">
                 *
             </asp:RequiredFieldValidator>
-
-            <asp:Label ID="AddressLine2Label" AssociatedControlID="AddressLine2TextBox" runat="server">Address Line 2</asp:Label>
+            <br />
+            <asp:Label ID="AddressLine2Label" AssociatedControlID="AddressLine2TextBox" runat="server">Address Line 2:&nbsp;</asp:Label>
             <asp:TextBox ID="AddressLine2TextBox" runat="server">
             </asp:TextBox>
-
-            <asp:Label ID="CityLabel" AssociatedControlID="CityTextBox" runat="server">City</asp:Label>
+            <br />
+            <asp:Label ID="CityLabel" AssociatedControlID="CityTextBox" runat="server">City:&nbsp;</asp:Label>
             <asp:TextBox ID="CityTextBox" runat="server">
             </asp:TextBox>
             <asp:RequiredFieldValidator
@@ -55,9 +58,9 @@
                 Display="Dynamic">
                 *
             </asp:RequiredFieldValidator>
-
+            <br />
             <%--BEGIN STATE DROPDOWN LIST--%>
-            <asp:Label ID="StateLabel" AssociatedControlID="StateDropDownList" runat="server">State</asp:Label>
+            <asp:Label ID="StateLabel" AssociatedControlID="StateDropDownList" runat="server">State:&nbsp;</asp:Label>
             <asp:DropDownList ID="StateDropDownList" runat="server">
                 <asp:ListItem Value="AL">Alabama</asp:ListItem>
                 <asp:ListItem Value="AK">Alaska</asp:ListItem>
@@ -112,8 +115,8 @@
                 <asp:ListItem Value="WY">Wyoming</asp:ListItem>
             </asp:DropDownList>
             <%--END STATE DROPDOWN LIST--%>
-
-            <asp:Label ID="ZipCodeLabel" AssociatedControlID="ZipCodeTextBox" runat="server">Zip Code</asp:Label>
+            <br />
+            <asp:Label ID="ZipCodeLabel" AssociatedControlID="ZipCodeTextBox" runat="server">Zip Code:&nbsp;</asp:Label>
             <asp:TextBox ID="ZipCodeTextBox" runat="server">
             </asp:TextBox>
             <asp:RequiredFieldValidator
@@ -132,14 +135,12 @@
                 ControlToValidate="ZipCodeTextBox"
                 ErrorMessage="Please correct the zip code format."
                 ValidationExpression="^[0-9]{5}(?:-[0-9]{4})?$"
-                Display="Dynamic"
-            >
+                Display="Dynamic">
                 *
             </asp:RegularExpressionValidator>
         </div>
-
         <div class="form-group">
-            <asp:Label ID="DateVisitedLabel" AssociatedControlID="DateVisitedTextBox" runat="server">Date Visited</asp:Label>
+            <asp:Label ID="DateVisitedLabel" AssociatedControlID="DateVisitedTextBox" runat="server">Date Visited:&nbsp;</asp:Label>
             <asp:TextBox ID="DateVisitedTextBox" TextMode="Date" runat="server">
             </asp:TextBox>
             <asp:RequiredFieldValidator
@@ -160,9 +161,8 @@
                 *
             </asp:CustomValidator>
         </div>
-
         <div class="form-group">
-            <asp:Label ID="PhoneNumberLabel" AssociatedControlID="PhoneNumberTextBox" runat="server">Phone number</asp:Label>
+            <asp:Label ID="PhoneNumberLabel" AssociatedControlID="PhoneNumberTextBox" runat="server">Phone number:&nbsp;</asp:Label>
             <asp:TextBox ID="PhoneNumberTextBox" runat="server"></asp:TextBox>
             <asp:RequiredFieldValidator
                 ID="PhoneNumberFieldValidator"
@@ -172,10 +172,20 @@
                 Display="Dynamic">
                 *
             </asp:RequiredFieldValidator>
+            <%--Source for regex.--%>
+            <%--https://www.oreilly.com/library/view/regular-expressions-cookbook/9781449327453/ch04s02.html--%>
+            <asp:RegularExpressionValidator
+                ID="PhoneNumberRegexValidator"
+                runat="server"
+                ControlToValidate="PhoneNumberTextBox"
+                ErrorMessage="Please correct the phone number format."
+                ValidationExpression="^\(?([0-9]{3})\)?[-.●]?([0-9]{3})[-.●]?([0-9]{4})$"
+                Display="Dynamic">
+                *
+            </asp:RegularExpressionValidator>
         </div>
-
         <div class="form-group">
-            <asp:Label ID="EmailLabel" AssociatedControlID="EmailTextBox" runat="server">Email</asp:Label>
+            <asp:Label ID="EmailLabel" AssociatedControlID="EmailTextBox" runat="server">Email:&nbsp;</asp:Label>
             <asp:TextBox ID="EmailTextBox" TextMode="Email" runat="server"></asp:TextBox>
             <asp:RequiredFieldValidator
                 ID="EmailFieldValidator"
@@ -186,9 +196,9 @@
                 *
             </asp:RequiredFieldValidator>
         </div>
-
         <div class="form-group">
-            <asp:Label ID="PasswordLabel" AssociatedControlID="PasswordTextBox" runat="server">Password</asp:Label>
+            <div class="alert alert-info" role="alert">Password must be at least 8 characters long, contain one uppercase letter, one lowercase letter, one number, and one special character.</div>
+            <asp:Label ID="PasswordLabel" AssociatedControlID="PasswordTextBox" runat="server">Password:&nbsp;</asp:Label>
             <asp:TextBox ID="PasswordTextBox" TextMode="Password" runat="server"></asp:TextBox>
             <asp:RequiredFieldValidator
                 ID="PasswordFieldValidator"
@@ -206,22 +216,12 @@
                 ControlToValidate="PasswordTextBox"
                 ErrorMessage="Password must be at least 8 characters long, contain one uppercase letter, one lowercase letter, one number, and one special character."
                 ValidationExpression="^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$"
-                Display="Dynamic"
-            >
+                Display="Dynamic">
                 *
             </asp:RegularExpressionValidator>
         </div>
-
         <div class="form-group">
-            <asp:Label ID="GardeningChoicesLabel" AssociatedControlID="GardeningChoicesCheckboxes" runat="server">Gardening Interests</asp:Label>
-
-            <asp:CheckBoxList ID="GardeningChoicesCheckboxes" runat="server">
-                <asp:ListItem>Flowers</asp:ListItem>
-                <asp:ListItem>Vegetables</asp:ListItem>
-                <asp:ListItem>Fruits</asp:ListItem>
-                <asp:ListItem>Medicinal Plants</asp:ListItem>
-                <asp:ListItem>Hemp</asp:ListItem>
-            </asp:CheckBoxList>
+            <asp:Label ID="GardeningChoicesLabel" AssociatedControlID="GardeningChoicesCheckboxes" runat="server">Gardening Interests:&nbsp;</asp:Label>
             <asp:CustomValidator
                 ID="CheckBoxRequired"
                 runat="server"
@@ -231,10 +231,16 @@
                 Display="Dynamic">
                 *
             </asp:CustomValidator>
+            <asp:CheckBoxList ID="GardeningChoicesCheckboxes" runat="server">
+                <asp:ListItem>Flowers</asp:ListItem>
+                <asp:ListItem>Vegetables</asp:ListItem>
+                <asp:ListItem>Fruits</asp:ListItem>
+                <asp:ListItem>Medicinal Plants</asp:ListItem>
+                <asp:ListItem>Hemp</asp:ListItem>
+            </asp:CheckBoxList>
         </div>
-
         <div class="form-group">
-            <asp:Label ID="BusinessArrivalLabel" AssociatedControlID="BusinessArrivalDropdown" runat="server">How you got here</asp:Label>
+            <asp:Label ID="BusinessArrivalLabel" AssociatedControlID="BusinessArrivalDropdown" runat="server">How you got here:&nbsp;</asp:Label>
             <asp:DropDownList ID="BusinessArrivalDropdown" runat="server">
                 <asp:ListItem>Bus</asp:ListItem>
                 <asp:ListItem>Car</asp:ListItem>
@@ -243,19 +249,18 @@
                 <asp:ListItem>Other</asp:ListItem>
             </asp:DropDownList>
         </div>
-
         <div class="form-group">
-            <asp:Label ID="ContactPreferenceLabel" AssociatedControlID="ContactPreferenceRadioButtons" runat="server">Contact Preference</asp:Label>
+            <asp:Label ID="ContactPreferenceLabel" AssociatedControlID="ContactPreferenceRadioButtons" runat="server">Contact Preference:&nbsp;</asp:Label>
             <asp:RadioButtonList ID="ContactPreferenceRadioButtons" runat="server" RepeatDirection="Horizontal">
                 <asp:ListItem Value="Email" Selected="True">Email</asp:ListItem>
                 <asp:ListItem Value="Phone">Phone</asp:ListItem>
                 <asp:ListItem Value="Letter">Letter</asp:ListItem>
             </asp:RadioButtonList>
         </div>
-
         <div class="form-group">
-            <asp:Label ID="FeedbackLabel" AssociatedControlID="FeedbackTextBox" runat="server">Feedback</asp:Label>
-            <asp:TextBox ID="FeedbackTextBox" runat="server" TextMode="MultiLine"></asp:TextBox>
+            <asp:Label ID="FeedbackLabel" AssociatedControlID="FeedbackTextBox" runat="server">Feedback:&nbsp;</asp:Label>
+            <br />
+            <asp:TextBox ID="FeedbackTextBox" runat="server" TextMode="MultiLine" Rows="5" Columns="50"></asp:TextBox>
             <asp:RequiredFieldValidator
                 ID="FeedbackFieldValidator"
                 runat="server"
@@ -265,16 +270,17 @@
                 *
             </asp:RequiredFieldValidator>
         </div>
-
         <asp:Button ID="SubmitForm" CssClass="btn btn-primary" runat="server" Text="Submit" OnClick="SubmitForm_Click" ToolTip="Submit" />
         <br />
-
         <asp:ValidationSummary
             ID="ValidationSummary"
             DisplayMode="BulletList"
             runat="server"
             HeaderText="There are errors in your form" />
     </div>
-    <asp:Label ID="ValidMessageLabel" runat="server"></asp:Label>
-    <asp:Label ID="FormResults" runat="server"></asp:Label>
+    <div class="form-div">
+        <asp:Label ID="ValidMessageLabel" runat="server" Visible="false"></asp:Label>
+        <br />
+        <asp:Label ID="FormResults" runat="server"></asp:Label>
+    </div>
 </asp:Content>

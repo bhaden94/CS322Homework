@@ -15,6 +15,15 @@ namespace BradyHaden.Pages
     {
 
         /// <summary>
+        /// Hw2Image control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image Hw2Image;
+
+        /// <summary>
         /// FormDiv control.
         /// </summary>
         /// <remarks>
@@ -249,6 +258,15 @@ namespace BradyHaden.Pages
         protected global::System.Web.UI.WebControls.RequiredFieldValidator PhoneNumberFieldValidator;
 
         /// <summary>
+        /// PhoneNumberRegexValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator PhoneNumberRegexValidator;
+
+        /// <summary>
         /// EmailLabel control.
         /// </summary>
         /// <remarks>
@@ -321,15 +339,6 @@ namespace BradyHaden.Pages
         protected global::System.Web.UI.WebControls.Label GardeningChoicesLabel;
 
         /// <summary>
-        /// GardeningChoicesCheckboxes control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBoxList GardeningChoicesCheckboxes;
-
-        /// <summary>
         /// CheckBoxRequired control.
         /// </summary>
         /// <remarks>
@@ -337,6 +346,15 @@ namespace BradyHaden.Pages
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CustomValidator CheckBoxRequired;
+
+        /// <summary>
+        /// GardeningChoicesCheckboxes control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBoxList GardeningChoicesCheckboxes;
 
         /// <summary>
         /// BusinessArrivalLabel control.

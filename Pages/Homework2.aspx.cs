@@ -13,19 +13,41 @@ namespace BradyHaden.Pages
         {
             if (Page.IsPostBack)
             {
+                // build address string
+                string fullAddress = "";
+                if(AddressLine2TextBox.Text != null)
+                {
+                    fullAddress = "Address: " + AddressLine1TextBox.Text + ", " +
+                        AddressLine2TextBox.Text + ", " +
+                        CityTextBox.Text + ", " +
+                        StateDropDownList.SelectedValue +
+                        ZipCodeTextBox.Text;
+                } else
+                {
+                    fullAddress = "Address: " + AddressLine1TextBox.Text + ", " +
+                        CityTextBox.Text + ", " +
+                        StateDropDownList.SelectedValue +
+                        ZipCodeTextBox.Text;
+                }
+                // build gardening choices list
+                List<String> seletedGardeningChoices = new List<string>();
+                foreach(ListItem choice in GardeningChoicesCheckboxes.Items)
+                {
+                    if (choice.Selected)
+                    {
+                        seletedGardeningChoices.Add(choice.Text);
+                    }
+                }
+
                 // hide form and show success text
                 FormDiv.Visible = false;
                 FormResults.Text = "<br />" + "Here are your results: " + "<br />" +
                   "User name: " + UserNameTextBox.Text + "<br />" +
-                  "Address: " + AddressLine1TextBox.Text + ", " +
-                    AddressLine2TextBox.Text + ", " +
-                    CityTextBox.Text + ", " +
-                    StateDropDownList.SelectedValue +
-                    ZipCodeTextBox.Text + "<br />" +
+                  "Address: " + fullAddress + "<br />" +
                   "Date visited: " + DateVisitedTextBox.Text + "<br />" +
                   "Phone number: " + PhoneNumberTextBox.Text + "<br />" +
                   "Email: " + EmailTextBox.Text + "<br />" +
-                  //"Gardening choices: " + PhoneNumberTextBox.Text + "<br />" +
+                  "Gardening choices: " + String.Join(", ", seletedGardeningChoices) + "<br />" +
                   "Contact preference: " + ContactPreferenceRadioButtons.SelectedValue + "<br />" +
                   "Feedback given: " + FeedbackTextBox.Text + "<br />";
             }
@@ -36,10 +58,14 @@ namespace BradyHaden.Pages
             if (Page.IsValid)
             {
                 ValidMessageLabel.Text = "Form Successfully Submitted!";
+                ValidMessageLabel.Visible = true;
+                ValidMessageLabel.CssClass = "alert alert-success";
             }
             else
             {
                 ValidMessageLabel.Text = "Form is NOT valid.";
+                ValidMessageLabel.Visible = true;
+                ValidMessageLabel.CssClass = "alert alert-danger";
             }
         }
 

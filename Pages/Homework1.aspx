@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div class="gardening-page">
         <div class="header">
-            <div class="header-img"></div>
+            <div class="header-img hw1-bg"></div>
             <h1 class="header-text">Gardening</h1>
         </div>
 

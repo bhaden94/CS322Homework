@@ -166,6 +166,7 @@
     <Content Include="Account\ResetPasswordConfirmation.aspx" />
     <Content Include="Account\TwoFactorAuthenticationSignIn.aspx" />
     <Content Include="Account\VerifyPhoneNumber.aspx" />
+    <Content Include="App_Themes\Theme1\global-styles.css" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -186,8 +187,10 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Account\Web.config" />
     <Content Include=".gitignore" />
+    <Content Include="App_Themes\Theme1\calendar.skin" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Images\garden-bg.jpg" />
+    <Content Include="Pages\Calendar.aspx" />
     <Content Include="Pages\Homework1.aspx" />
     <Content Include="Pages\Homework2.aspx" />
     <Content Include="Scripts\bootstrap.js" />
@@ -359,6 +362,13 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Pages\Calendar.aspx.cs">
+      <DependentUpon>Calendar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Calendar.aspx.designer.cs">
+      <DependentUpon>Calendar.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Homework1.aspx.cs">
       <DependentUpon>Homework1.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

@@ -1,3 +1,11 @@
 ﻿body {
     border: 5px solid red;
 }
+
+.cust-calendar th {
+    text-align: center;
+}
+
+.next-prev {
+    padding: 0 2%;
+}

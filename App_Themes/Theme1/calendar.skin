@@ -1,43 +1,26 @@
-﻿<%--
-Default skin template. The following skins are provided as examples only.
-
-1. Named control skin. The SkinId should be uniquely defined because
-   duplicate SkinId's per control type are not allowed in the same theme.
-
-<asp:GridView runat="server" SkinId="gridviewSkin" BackColor="White" >
-   <AlternatingRowStyle BackColor="Blue" />
-</asp:GridView>
-
-2. Default skin. The SkinId is not defined. Only one default 
-   control skin per control type is allowed in the same theme.
-
-<asp:Image runat="server" ImageUrl="~/images/image1.jpg" />
---%>
-<asp:Calendar
+﻿<asp:Calendar
     SkinID="MyCalendarSkin"
     runat="server"
-    BackColor="White"
-    BorderColor="Black"
+    BackColor="#0c0c0c"
+    BorderColor="#0c0c0c"
     BorderStyle="Solid"
     CellSpacing="1"
-    Font-Names="Verdana"
-    Font-Size="9pt"
-    ForeColor="Black"    
-    Height="250px"
-    Width="500px"
+    ForeColor="White"    
+    Height="500px"
+    Width="100%"
     NextPrevFormat="ShortMonth"
     SelectionMode="Day"
+    CssClass="cust-calendar"
 >
-    <SelectedDayStyle BackColor="DarkOrange" ForeColor="White" />
-    <DayStyle BackColor="Orange" Font-Bold="True" ForeColor="White" />
-    <NextPrevStyle Font-Bold="True" Font-Size="8pt" ForeColor="White" />
-    <DayHeaderStyle Font-Bold="True" Font-Size="8pt" ForeColor="#333333" Height="8pt" />
+    <SelectedDayStyle BackColor="#0275d8" ForeColor="#f7f7f7" />
+    <DayStyle BackColor="#292b2c" Font-Bold="True" ForeColor="#f7f7f7" />
+    <NextPrevStyle Font-Bold="True" ForeColor="#f7f7f7" CssClass="next-prev" />
+    <DayHeaderStyle Font-Bold="True" ForeColor="White" Height="10px" />
     <TitleStyle
-        BackColor="Firebrick"
+        BackColor="#0c0c0c"
         BorderStyle="None"
         Font-Bold="True"
-        Font-Size="12pt"
-        ForeColor="White"
-        Height="12pt" />
-    <OtherMonthDayStyle BackColor="NavajoWhite" Font-Bold="False" ForeColor="DarkGray" />
+        Font-Size="20px"
+        ForeColor="White" />
+    <OtherMonthDayStyle BackColor="#1b1f21" Font-Bold="False" ForeColor="#f7f7f7" />
 </asp:Calendar>

@@ -2,8 +2,7 @@
     SkinID="MyCalendarSkin"
     runat="server"
     BackColor="#0c0c0c"
-    BorderColor="#0c0c0c"
-    BorderStyle="Solid"
+    BorderStyle="None"
     CellSpacing="1"
     ForeColor="White"    
     Height="500px"
@@ -21,6 +20,7 @@
         BorderStyle="None"
         Font-Bold="True"
         Font-Size="20px"
-        ForeColor="White" />
+        ForeColor="White"
+    />
     <OtherMonthDayStyle BackColor="#1b1f21" Font-Bold="False" ForeColor="#f7f7f7" />
 </asp:Calendar>

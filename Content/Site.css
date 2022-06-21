@@ -4,23 +4,6 @@ body {
     padding-bottom: 20px;
 }
 
-/*Dark mode CSS*/
-/*h1, h2, h3, h4 {
-    color: white !important;
-}
-
-p, li, address, th, span, label {
-    color: #f7f7f7 !important;
-}
-
-.bg-dark {
-    background-color: #292b2c;
-}
-
-.jumbotron {
-    background-color: #1c1e1e;
-}*/
-
 /* Wrapping element */
 /* Set some basic padding to keep content from hitting the edges */
 .body-content {

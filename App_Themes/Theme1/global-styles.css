@@ -1,11 +1,25 @@
-﻿body {
-    border: 5px solid red;
-}
-
-.cust-calendar th {
+﻿.cust-calendar th {
     text-align: center;
 }
 
 .next-prev {
     padding: 0 2%;
+}
+
+
+/*Dark mode CSS*/
+h1, h2, h3, h4 {
+    color: white !important;
+}
+
+p, li, address, th, span, label {
+    color: #f7f7f7 !important;
+}
+
+.bg-dark {
+    background-color: #292b2c;
+}
+
+.jumbotron {
+    background-color: #1c1e1e;
 }

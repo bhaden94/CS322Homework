@@ -5,7 +5,7 @@
     BorderStyle="None"
     CellSpacing="1"
     ForeColor="White"    
-    Height="500px"
+    Height="550px"
     Width="100%"
     NextPrevFormat="ShortMonth"
     SelectionMode="Day"

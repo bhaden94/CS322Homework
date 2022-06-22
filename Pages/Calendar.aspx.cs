@@ -36,7 +36,13 @@ namespace BradyHaden.Pages
             // All Sundays
             if (e.Day.Date.DayOfWeek == DayOfWeek.Sunday)
             {
-                e.Cell.Controls.Add(new LiteralControl("<br />Closed"));
+                try
+                {
+                    e.Cell.Controls.Add(new LiteralControl("<br />Closed"));
+                } catch (HttpException ex)
+                {
+                    Trace.Warn(ex.Message);
+                }
                 e.Cell.BackColor = System.Drawing.Color.Black;
             }
 
@@ -47,10 +53,17 @@ namespace BradyHaden.Pages
             // The easier one for June is a fixed date, not on a Sunday this year.
             if (e.Day.Date.Day == 6 && e.Day.Date.Month == (int)Month.June)
             {
-                e.Cell.Style.Add("background-image", "url(../Images/d-day.jpg)");
-                e.Cell.Style.Add("background-size", "contain");
-                e.Cell.Style.Add("background-repeat", "no-repeat");
-                e.Cell.Style.Add("background-position", "center");
+                try
+                {
+                    e.Cell.Style.Add("background-image", "url(../Images/d-day.jpg)");
+                    e.Cell.Style.Add("background-size", "contain");
+                    e.Cell.Style.Add("background-repeat", "no-repeat");
+                    e.Cell.Style.Add("background-position", "center");
+                }
+                catch (HttpException ex)
+                {
+                    Trace.Warn(ex.Message);
+                }
             }
             // Independance day
             if (e.Day.Date.Day == 4 && e.Day.Date.Month == (int)Month.July)
@@ -59,16 +72,33 @@ namespace BradyHaden.Pages
                 myLink.NavigateUrl = "https://www.history.com/topics/holidays/july-4th";
                 myLink.Text = "Independance Day History";
                 myLink.Target = "_blank";
-                e.Cell.Controls.Add(new LiteralControl("<br />"));
-                e.Cell.Controls.Add(myLink);
+                try
+                {
+                    e.Cell.Controls.Add(new LiteralControl("<br />"));
+                    e.Cell.Controls.Add(myLink);
+                } catch (HttpException ex)
+                {
+                    Trace.Warn(ex.Message);
+                } catch (ArgumentNullException ex)
+                {
+                    Trace.Warn("Hyperlink is null");
+                    Trace.Warn(ex.Message);
+                }
+                
             }
 
             // Gardening bonanza on 16th of current month
             if (DateTime.Now.Month == e.Day.Date.Month && e.Day.Date.Day == 16)
             {
-                e.Cell.Controls.Add(new LiteralControl("<br />"));
-                e.Cell.Controls.Add(new LiteralControl("Gardening bonanza! Come join us for huge discounts and a fun time."));
-                e.Cell.Style.Add("font-size", "12px");
+                try
+                {
+                    e.Cell.Controls.Add(new LiteralControl("<br />"));
+                    e.Cell.Controls.Add(new LiteralControl("Gardening bonanza! Come join us for huge discounts and a fun time."));
+                    e.Cell.Style.Add("font-size", "12px");
+                } catch (HttpException ex)
+                {
+                    Trace.Warn(ex.Message);
+                }
             }
         }
 

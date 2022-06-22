@@ -71,5 +71,40 @@ namespace BradyHaden.Pages
                 e.Cell.Style.Add("font-size", "12px");
             }
         }
+
+        protected void MyCalendar_SelectionChanged(object sender, EventArgs e)
+        {
+            DateTime selectedDate = MyCalendar.SelectedDates[MyCalendar.SelectedDates.Count - 1].Date;
+            Message.Text = "Selected Date: ";
+            Message.Text += selectedDate.ToShortDateString();
+            if (selectedDate.Day == 13)
+            {
+                Message.Text += "<br /> Sorry, we are closed the 13th of every month.";
+            }
+            else if (selectedDate.DayOfWeek == DayOfWeek.Saturday)
+            {
+                // Saturday's have gardening lessons
+                // 4 different lessons to choose from
+                // customers can call to schedule
+                // future addition could be scheduling on our site
+                string[] gardeningLessons = { 
+                    "How to prepare your soil.",
+                    "How to use common gardening tools.",
+                    "How much water to give specific plants and vegetables.",
+                    "How to maintain your garden."
+                };
+                Message.Text += "<br /> Saturday lessons offered: ";
+                for (int i = 0; i < gardeningLessons.Length; i++)
+                {
+                    Message.Text += "<br /> &emsp;" + (i + 1) + " - " + gardeningLessons[i];
+                }
+                Message.Text += "<br /> Please call 854-2GA-RDEN (854-242-7336) to schedule.";
+            }
+            else
+            {
+                // During the week have a simple message to come look at their gardening supplies
+                Message.Text += "<br /> Come check out our gardening supplies!";
+            }
+        }
     }
 }

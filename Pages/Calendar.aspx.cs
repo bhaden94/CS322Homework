@@ -28,7 +28,11 @@ namespace BradyHaden.Pages
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            // Have default selected day as today so our label always has content
+            DateTime today = DateTime.Today;
+            MyCalendar.TodaysDate = today;
+            MyCalendar.SelectedDate = MyCalendar.TodaysDate;
+            SetCalendarLabel();
         }
 
         protected void MyCalendar_DayRender(object sender, DayRenderEventArgs e)
@@ -104,9 +108,15 @@ namespace BradyHaden.Pages
 
         protected void MyCalendar_SelectionChanged(object sender, EventArgs e)
         {
-            DateTime selectedDate = MyCalendar.SelectedDates[MyCalendar.SelectedDates.Count - 1].Date;
-            Message.Text = "Selected Date: ";
-            Message.Text += selectedDate.ToShortDateString();
+            SetCalendarLabel();
+        }
+
+        private void SetCalendarLabel()
+        {
+            Message.Text = "";
+            DateTime selectedDate = MyCalendar.SelectedDate;
+            MessageHeading.Text = "Selected Date: ";
+            MessageHeading.Text += selectedDate.ToShortDateString();
             if (selectedDate.Day == 13)
             {
                 Message.Text += "<br /> Sorry, we are closed the 13th of every month.";

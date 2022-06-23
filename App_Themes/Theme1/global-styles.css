@@ -23,3 +23,12 @@ p, li, address, th, span, label {
 .jumbotron {
     background-color: #1c1e1e;
 }
+
+.panel {
+    background-color: #1c1e1e;
+    margin-top: 30px;
+}
+
+.panel-primary {
+    border-style: none;
+}

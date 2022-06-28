@@ -30,11 +30,11 @@
     </div>
 
     <div class="dynamic-content">
-        <asp:UpdatePanel ID="UpdatePanel1" runat="server" CssClass="left-content-panel" ScrollBars="Both">
+        <asp:UpdatePanel ID="UpdatePanel1" runat="server">
             <ContentTemplate>
                 <div>
-                    <%--<asp:Image runat="server" />--%>
-                    <asp:Label ID="PanelLabel" runat="server">Label1</asp:Label>
+                    <h2><asp:Label ID="UpdatePanelLabel" runat="server">Vegetable Garden</asp:Label></h2>
+                    <asp:Image ID="UpdatePanelImage" runat="server" ImageUrl="../Images/hw4-veg-garden.jpg" />
                     <br />
                     <asp:Button ID="Button1" runat="server" Text="Next Panel" OnClick="UpdateDynamicPanel" />
                 </div>

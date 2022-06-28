@@ -6,44 +6,44 @@
         <h1 class="header-text">All About Gardening</h1>
     </div>
 
-    <div class="video">
-        <%--Youtube video - https://www.youtube.com/watch?v=B0DrWAUsNSc&ab_channel=SSLFamilyDad--%>
-        <%--Show bulleted list with steps outlined in video--%>
-        <%--Add hyperlink to time for each step--%>
-        <%--Step 1 - pick a location @ 51 seconds--%>
-        <%--Step 2 - what to grow @ 1:38--%>
-        <%--Step 3 - buying seeds @ 2:36--%>
-        <%--step 4 - starting seeds @ 3:20--%>
-        <%--step 5 - preparing garden space @ 4:20--%>
-        <%--step 6 (optional) - start a compost pile @ 6:20--%>
-        <%--step 7 - planting @ 7:16--%>
-        <%--step 8 - Caring for your garden @ 8:20--%>
-        <%--step 9 - harvest and preserve @ 11:09--%>
-        <%--step 10 - prepare for winter @ 13:10--%>
+    <div class="video-section">
+        <iframe
+            width="100%"
+            height="600"
+            src="https://www.youtube.com/embed/B0DrWAUsNSc" title="Gardening 101: how to start a garden"
+            rameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen="true"></iframe>
+        <h2>Included in the above video:</h2>
+        <ul>
+            <li><a target="_blank" href="https://youtu.be/B0DrWAUsNSc?t=51">Step 1 - pick a location</a></li>
+            <li><a target="_blank" href="https://youtu.be/B0DrWAUsNSc?t=98">Step 2 - what to grow</a></li>
+            <li><a target="_blank" href="https://youtu.be/B0DrWAUsNSc?t=156">Step 3 - buying seeds</a></li>
+            <li><a target="_blank" href="https://youtu.be/B0DrWAUsNSc?t=200">Step 4 - starting seeds</a></li>
+            <li><a target="_blank" href="https://youtu.be/B0DrWAUsNSc?t=260">Step 5 - preparing garden space</a></li>
+            <li><a target="_blank" href="https://youtu.be/B0DrWAUsNSc?t=380">Step 6 (optional) - start a compost pile</a></li>
+            <li><a target="_blank" href="https://youtu.be/B0DrWAUsNSc?t=436">Step 7 - planting</a></li>
+            <li><a target="_blank" href="https://youtu.be/B0DrWAUsNSc?t=500">Step 8 - caring for your garden</a></li>
+            <li><a target="_blank" href="https://youtu.be/B0DrWAUsNSc?t=669">Step 9 - harvest and preserve</a></li>
+            <li><a target="_blank" href="https://youtu.be/B0DrWAUsNSc?t=790">Step 10 - prepare for winter</a></li>
+        </ul>
     </div>
 
-    <div class="zig-zag-content">
-        <asp:Panel ID="Panel1" runat="server" CssClass="left-content-panel" ScrollBars="Both">
-            <asp:Image runat="server" />
-            <asp:Label ID="Label1" runat="server">Label1</asp:Label>
-            <asp:TextBox runat="server"></asp:TextBox>
-        </asp:Panel>
-
-        <asp:Panel ID="Panel2" runat="server" CssClass="right-content-panel" ScrollBars="Both">
-            <asp:Image runat="server" />
-            <asp:Label ID="Label2" runat="server">Label2</asp:Label>
-            <asp:TextBox runat="server"></asp:TextBox>
-        </asp:Panel>
-
-        <asp:Panel ID="Panel3" runat="server" CssClass="left-content-panel" ScrollBars="Both">
-            <asp:Image runat="server" />
-            <asp:Label ID="Label3" runat="server">Label3</asp:Label>
-            <asp:TextBox runat="server"></asp:TextBox>
-        </asp:Panel>
+    <div class="dynamic-content">
+        <asp:UpdatePanel ID="UpdatePanel1" runat="server" CssClass="left-content-panel" ScrollBars="Both">
+            <ContentTemplate>
+                <div>
+                    <%--<asp:Image runat="server" />--%>
+                    <asp:Label ID="PanelLabel" runat="server">Label1</asp:Label>
+                    <br />
+                    <asp:Button ID="Button1" runat="server" Text="Next Panel" OnClick="UpdateDynamicPanel" />
+                </div>
+            </ContentTemplate>
+        </asp:UpdatePanel>
     </div>
 
     <div class="hw4-table">
-        <asp:Table CssClass="table table-striped table-bordered" ID="yourId" runat="server">
+        <asp:Table CssClass="table" ID="yourId" runat="server">
             <asp:TableHeaderRow TableSection="TableHeader">
                 <asp:TableCell>Flower</asp:TableCell>
                 <asp:TableCell>Start Seeds Indoors (Weeks Before Last Frost Date)</asp:TableCell>

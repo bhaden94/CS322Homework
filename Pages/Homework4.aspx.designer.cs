@@ -33,13 +33,13 @@ namespace BradyHaden.Pages
         protected global::System.Web.UI.UpdatePanel UpdatePanel1;
 
         /// <summary>
-        /// UpdatePanelLabel control.
+        /// UpdatePanelHeader control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label UpdatePanelLabel;
+        protected global::System.Web.UI.WebControls.Label UpdatePanelHeader;
 
         /// <summary>
         /// UpdatePanelImage control.
@@ -49,6 +49,24 @@ namespace BradyHaden.Pages
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Image UpdatePanelImage;
+
+        /// <summary>
+        /// GardenListTitle control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl GardenListTitle;
+
+        /// <summary>
+        /// GardenList control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.BulletedList GardenList;
 
         /// <summary>
         /// Button1 control.

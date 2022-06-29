@@ -32,11 +32,19 @@
     <div class="dynamic-content">
         <asp:UpdatePanel ID="UpdatePanel1" runat="server">
             <ContentTemplate>
-                <div>
-                    <h2><asp:Label ID="UpdatePanelLabel" runat="server">Vegetable Garden</asp:Label></h2>
-                    <asp:Image ID="UpdatePanelImage" runat="server" ImageUrl="../Images/hw4-veg-garden.jpg" />
-                    <br />
-                    <asp:Button ID="Button1" runat="server" Text="Next Panel" OnClick="UpdateDynamicPanel" />
+                <h2><asp:Label ID="UpdatePanelHeader" CssClass="update-panel-label" runat="server">Vegetable Garden</asp:Label></h2>
+                <div class="grid-container">
+                    <asp:Image ID="UpdatePanelImage" CssClass="grid-image" runat="server" ImageUrl="../Images/hw4-veg-garden.jpg" />
+                    <div class="grid-text">
+                        <h3 id="GardenListTitle" runat="server">Plants in a Vegetable Garden</h3>
+                        <asp:BulletedList ID="GardenList" runat="server">
+                            <asp:ListItem>Tomatoes</asp:ListItem>
+                            <asp:ListItem>Lettuce</asp:ListItem>
+                            <asp:ListItem>Peppers</asp:ListItem>
+                            <asp:ListItem>Potatoes</asp:ListItem>
+                        </asp:BulletedList>
+                    </div>
+                    <asp:Button ID="Button1" CssClass="grid-button btn btn-primary" runat="server" Text="Next Garden" OnClick="UpdateDynamicPanel" />
                 </div>
             </ContentTemplate>
         </asp:UpdatePanel>

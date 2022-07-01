@@ -11,7 +11,7 @@ namespace BradyHaden.Pages
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            FormResults.Visible = false;
         }
 
         protected void UpdateDynamicPanel(object sender, EventArgs e)
@@ -58,6 +58,20 @@ namespace BradyHaden.Pages
                 GardenList.Items.Clear();
                 GardenList.Items.AddRange(listItems[0]);
             }
+        }
+
+        protected void Hw4ImageButton_Click(object sender, EventArgs e)
+        {
+            // validate email is there
+
+            // keep form and post error if not
+
+            // else get rid of form and post success
+            FormDiv.Visible = false;
+            EmailListResults.Text = "You are added to the email list!";
+            //EmailListResults.Visible = true;
+            EmailListResults.CssClass = "alert alert-success";
+            FormResults.Visible = true;
         }
     }
 }

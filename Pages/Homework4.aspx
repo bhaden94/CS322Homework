@@ -30,9 +30,10 @@
     </div>
 
     <div class="dynamic-content">
-        <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+        <asp:UpdatePanel ID="UpdatePanel1" runat="server" UpdateMode="Conditional">
             <ContentTemplate>
-                <h2><asp:Label ID="UpdatePanelHeader" CssClass="update-panel-label" runat="server">Vegetable Garden</asp:Label></h2>
+                <h2>
+                    <asp:Label ID="UpdatePanelHeader" CssClass="update-panel-label" runat="server">Vegetable Garden</asp:Label></h2>
                 <div class="grid-container">
                     <asp:Image ID="UpdatePanelImage" CssClass="grid-image" runat="server" ImageUrl="../Images/hw4-veg-garden.jpg" />
                     <div class="grid-text">
@@ -164,4 +165,25 @@
             </asp:TableRow>
         </asp:Table>
     </div>
+
+    <div class="dynamic-form">
+        <asp:UpdatePanel ID="UpdatePanel2" runat="server" UpdateMode="Conditional">
+            <ContentTemplate>
+                <div id="FormDiv" runat="server" class="form-div">
+                    <asp:Label ID="EmailLabel" AssociatedControlID="EmailTextBox" runat="server">Email:&nbsp;</asp:Label>
+                    <asp:TextBox ID="EmailTextBox" TextMode="Email" runat="server"></asp:TextBox>
+                    <br />
+                    <asp:ImageButton ID="Hw4ImageButton" runat="server"
+                        AlternateText="Submit Image Button"
+                        ImageUrl="../Images/hw4-btn-image.png"
+                        CssClass="hw4-btn-image"
+                        OnClick="Hw4ImageButton_Click" />
+                </div>
+                <div id="FormResults" runat="server" class="form-div form-valid-results">
+                    <asp:Label ID="EmailListResults" runat="server"></asp:Label>
+                </div>
+            </ContentTemplate>
+        </asp:UpdatePanel>
+    </div>
+
 </asp:Content>

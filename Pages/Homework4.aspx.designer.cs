@@ -105,6 +105,15 @@ namespace BradyHaden.Pages
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl FormDiv;
 
         /// <summary>
+        /// FormInput control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl FormInput;
+
+        /// <summary>
         /// EmailLabel control.
         /// </summary>
         /// <remarks>
@@ -130,15 +139,6 @@ namespace BradyHaden.Pages
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ImageButton Hw4ImageButton;
-
-        /// <summary>
-        /// FormResults control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl FormResults;
 
         /// <summary>
         /// EmailListResults control.

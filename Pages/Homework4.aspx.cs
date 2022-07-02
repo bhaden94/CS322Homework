@@ -11,7 +11,6 @@ namespace BradyHaden.Pages
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            FormResults.Visible = false;
         }
 
         protected void UpdateDynamicPanel(object sender, EventArgs e)
@@ -23,7 +22,7 @@ namespace BradyHaden.Pages
             ListItem[][] listItems = {
                 new ListItem[]{ new ListItem("Tomatoes"), new ListItem("Lettuce"), new ListItem("Peppers"), new ListItem("Potatoes") },
                 new ListItem[]{ new ListItem("Roses"), new ListItem("Tulips"), new ListItem("Azeleas"), new ListItem("Sunflowers") },
-                new ListItem[]{ new ListItem("Parsley"), new ListItem("Rosemary"), new ListItem("Basil"), new ListItem("Chives") } 
+                new ListItem[]{ new ListItem("Parsley"), new ListItem("Rosemary"), new ListItem("Basil"), new ListItem("Chives") }
             };
 
             if (UpdatePanelHeader.Text.Equals(labels[0]))
@@ -62,16 +61,19 @@ namespace BradyHaden.Pages
 
         protected void Hw4ImageButton_Click(object sender, EventArgs e)
         {
-            // validate email is there
-
-            // keep form and post error if not
-
-            // else get rid of form and post success
-            FormDiv.Visible = false;
-            EmailListResults.Text = "You are added to the email list!";
-            //EmailListResults.Visible = true;
-            EmailListResults.CssClass = "alert alert-success";
-            FormResults.Visible = true;
+            // validating email here was needed instead of using required field validattor
+            // this was because of issues with mutliple UpdatePanels and the required field validator togeter on the same page
+            if (EmailTextBox.Text == null || EmailTextBox.Text.Equals(""))
+            {
+                EmailListResults.Text = "Please enter your email.";
+                EmailListResults.CssClass = "alert alert-danger";
+            }
+            else
+            {
+                FormInput.Visible = false;
+                EmailListResults.Text = "Congradulations, " + EmailTextBox.Text + " has been added to our email list!";
+                EmailListResults.CssClass = "alert alert-success";
+            }
         }
     }
 }

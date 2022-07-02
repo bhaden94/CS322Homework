@@ -15,7 +15,6 @@ namespace BradyHaden.Pages
 
         protected void UpdateDynamicPanel(object sender, EventArgs e)
         {
-            //System.Threading.Thread.Sleep(TimeSpan.FromSeconds(2));
             string[] labels = { "Vegetable Garden", "Flower Garden", "Herb Garden" };
             string[] images = { "../Images/hw4-veg-garden.jpg", "../Images/hw4-flower-garden.jpg", "../Images/hw4-herb-garden.jpg" };
             string[] listHeaders = { "Plants in a Vegetable Garden", "Plants in a Flower Garden", "Plants in a Herb Garden" };

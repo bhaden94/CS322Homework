@@ -177,6 +177,12 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="Database\DeleteProducts.aspx" />
+    <Content Include="Database\DisplayCategories.aspx" />
+    <Content Include="Database\DisplayProducts.aspx" />
+    <Content Include="Database\index.aspx" />
+    <Content Include="Database\InsertProducts.aspx" />
+    <Content Include="Database\UpdateProducts.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -355,6 +361,48 @@
     </Compile>
     <Compile Include="Contact.aspx.designer.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Database\DeleteProducts.aspx.cs">
+      <DependentUpon>DeleteProducts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Database\DeleteProducts.aspx.designer.cs">
+      <DependentUpon>DeleteProducts.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Database\DisplayCategories.aspx.cs">
+      <DependentUpon>DisplayCategories.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Database\DisplayCategories.aspx.designer.cs">
+      <DependentUpon>DisplayCategories.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Database\DisplayProducts.aspx.cs">
+      <DependentUpon>DisplayProducts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Database\DisplayProducts.aspx.designer.cs">
+      <DependentUpon>DisplayProducts.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Database\index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Database\index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Database\InsertProducts.aspx.cs">
+      <DependentUpon>InsertProducts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Database\InsertProducts.aspx.designer.cs">
+      <DependentUpon>InsertProducts.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Database\UpdateProducts.aspx.cs">
+      <DependentUpon>UpdateProducts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Database\UpdateProducts.aspx.designer.cs">
+      <DependentUpon>UpdateProducts.aspx</DependentUpon>
     </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>

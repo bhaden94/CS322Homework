@@ -49,16 +49,13 @@ namespace BradyHaden.Database
                     TableRow tempRow = new TableRow();
 
                     // id column
-                    idCell = new TableCell();
-                    idCell.Text = reader["Id"].ToString();
+                    idCell = DatabaseUtility.CreateTablCell(reader, "Id");
 
                     // name column
-                    nameCell = new TableCell();
-                    nameCell.Text = reader["name"].ToString();
+                    nameCell = DatabaseUtility.CreateTablCell(reader, "name");
 
                     // description column
-                    descriptionCell = new TableCell();
-                    descriptionCell.Text = reader["description"].ToString();
+                    descriptionCell = DatabaseUtility.CreateTablCell(reader, "description");
 
                     // image column
                     imageCell = new TableCell();
@@ -87,7 +84,7 @@ namespace BradyHaden.Database
                     CategoryTable.Rows.Add(tempRow);
                 }
                 reader.Close();
-                con.Close();
+                DatabaseUtility.CloseSqlConnection(con);
             }
             catch (Exception err)
             {

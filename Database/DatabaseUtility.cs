@@ -4,6 +4,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
+using System.Web.UI.WebControls;
 
 namespace BradyHaden.Database
 {
@@ -34,6 +35,16 @@ namespace BradyHaden.Database
         public static void CloseSqlConnection(SqlConnection con)
         {
             con.Close();
+        }
+
+        /*
+         * Creates a table cell when passed in the reader object and column name
+         */
+        public static TableCell CreateTablCell(SqlDataReader reader, string columnName)
+        {
+            TableCell tableCell = new TableCell();
+            tableCell.Text = reader[columnName].ToString();
+            return tableCell;
         }
     }
 }

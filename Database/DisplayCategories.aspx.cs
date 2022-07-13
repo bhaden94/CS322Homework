@@ -94,7 +94,7 @@ namespace BradyHaden.Database
             finally
             {
                 DatabaseUtility.CloseSqlConnection(con);
-                Message.Text += "The Connection is now" + con.State.ToString();
+                //Message.Text += "The Connection is now" + con.State.ToString();
             }
         }
     }

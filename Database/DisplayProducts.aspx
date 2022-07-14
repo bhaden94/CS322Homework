@@ -3,10 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <h2>Display Products</h2>
     <br />
-    <asp:Table ID="ProductsTable" runat="server"
-        BorderColor="#CCCCCC" BorderStyle="Double" BorderWidth="1px"
-        GridLines="Both" CellPadding="10">
-
+    <asp:Table ID="ProductsTable" runat="server" CssClass="table">
         <asp:TableHeaderRow>
             <asp:TableHeaderCell>Product ID</asp:TableHeaderCell>
             <asp:TableHeaderCell>Product Name</asp:TableHeaderCell>

@@ -17,9 +17,7 @@
             <h2>All Products</h2>
             <br />
             <br />
-            <asp:Table ID="ProductsTable" runat="server"
-                BorderColor="#CCCCCC" BorderStyle="Double" BorderWidth="1px"
-                GridLines="Both" CellPadding="10">
+            <asp:Table ID="ProductsTable" runat="server" CssClass="table">
                 <asp:TableHeaderRow>
                     <asp:TableHeaderCell>Product ID</asp:TableHeaderCell>
                     <asp:TableHeaderCell>Product Name</asp:TableHeaderCell>

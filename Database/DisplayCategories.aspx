@@ -3,10 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <h2>Display Categories</h2>
     <br />
-    <asp:Table ID="CategoryTable" runat="server"
-        BorderColor="#CCCCCC" BorderStyle="Double" BorderWidth="1px"
-        GridLines="Both" CellPadding="10">
-
+    <asp:Table ID="CategoryTable" runat="server" CssClass="table">
         <asp:TableHeaderRow>
             <asp:TableHeaderCell>Category ID</asp:TableHeaderCell>
             <asp:TableHeaderCell>Category Name</asp:TableHeaderCell>

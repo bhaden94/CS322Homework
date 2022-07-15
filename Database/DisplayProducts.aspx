@@ -8,6 +8,7 @@
             <asp:TableHeaderCell>Product ID</asp:TableHeaderCell>
             <asp:TableHeaderCell>Product Name</asp:TableHeaderCell>
             <asp:TableHeaderCell>Category ID</asp:TableHeaderCell>
+            <asp:TableHeaderCell>Category Name</asp:TableHeaderCell>
             <asp:TableHeaderCell>Description</asp:TableHeaderCell>
             <asp:TableHeaderCell>Inventory Amount</asp:TableHeaderCell>
             <asp:TableHeaderCell>Cost</asp:TableHeaderCell>

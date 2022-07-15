@@ -24,17 +24,13 @@ namespace BradyHaden.Database
             }
             else
             {
-                for (int i = 1; i < CategoryTable.Rows.Count; i++)
-                {
-                    CategoryTable.Rows.RemoveAt(i);
-                }
+                DatabaseUtility.ClearTableFromIndex(CategoryTable, 1);
                 ShowCategoryTable();
             }
         }
 
         private void ShowCategoryTable()
         {
-            CategoryTable.Controls.Clear();
             SqlConnection con = DatabaseUtility.CreateSqlConnection(CS);
             SqlCommand cmd = DatabaseUtility.CreateStoredProcedureCommand(con, "GetAllCategories");
             SqlDataReader reader;

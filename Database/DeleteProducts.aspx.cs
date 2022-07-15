@@ -26,10 +26,7 @@ namespace BradyHaden.Database
                 if (ProductListDropDown.SelectedValue == "0")
                 {
                     ProductListDropDown.Items.Clear();
-                    for (int i = 1; i < ProductsTable.Rows.Count; i++)
-                    {
-                        ProductsTable.Rows.RemoveAt(i);
-                    }
+                    DatabaseUtility.ClearTableFromIndex(ProductsTable, 1);
                     ShowProductList();
                     ShowProdcutsTable();
                 }
@@ -72,11 +69,7 @@ namespace BradyHaden.Database
 
         private void ShowProdcutsTable()
         {
-            for (int i = 1; i < ProductsTable.Rows.Count; i++)
-            {
-                ProductsTable.Rows.RemoveAt(i);
-            }
-            ProductsTable.Controls.Clear();
+            DatabaseUtility.ClearTableFromIndex(ProductsTable, 1);
             SqlConnection con = DatabaseUtility.CreateSqlConnection(CS);
             SqlCommand cmd = DatabaseUtility.CreateStoredProcedureCommand(con, "GetAllProducts");
             SqlDataReader reader;

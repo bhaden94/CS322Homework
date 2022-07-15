@@ -26,6 +26,7 @@ namespace BradyHaden.Database
 
         /*
          * Opens a SQL connection
+         * Returns the SQL connectino
          */
         public static SqlConnection CreateSqlConnection(string connectionString)
         {
@@ -42,6 +43,7 @@ namespace BradyHaden.Database
 
         /*
          * Creates a table cell when passed in the reader object and column name
+         * Returns the TableCell
          */
         public static TableCell CreateTablCell(SqlDataReader reader, string columnName)
         {
@@ -50,6 +52,20 @@ namespace BradyHaden.Database
             return tableCell;
         }
 
+        /*
+         * Clears table rows from a given index
+         */
+        public static void ClearTableFromIndex(Table table, int startIndex)
+        {
+            for (int i = startIndex; i < table.Rows.Count; i++)
+            {
+                table.Rows.RemoveAt(i);
+            }
+        }
+
+        /*
+         * Creates product table rows
+         */
         public static void GenerateProductTableRows(SqlDataReader reader, Table ProductTable)
         {
             while (reader.Read())

@@ -40,19 +40,19 @@
         <section>
             All Products<br />
             <br />
-            <asp:Table ID="ProductTable" runat="server" CssClass="table">
+            <asp:Table ID="ProductsTable" runat="server" CssClass="table">
                 <asp:TableHeaderRow>
                     <asp:TableHeaderCell>Product ID</asp:TableHeaderCell>
                     <asp:TableHeaderCell>Product Name</asp:TableHeaderCell>
                     <asp:TableHeaderCell>Category ID</asp:TableHeaderCell>
                     <asp:TableHeaderCell>Category Name</asp:TableHeaderCell>
                     <asp:TableHeaderCell>Description</asp:TableHeaderCell>
-                    <asp:TableHeaderCell>Inventory</asp:TableHeaderCell>
+                    <asp:TableHeaderCell>Inventory Amount</asp:TableHeaderCell>
                     <asp:TableHeaderCell>Cost</asp:TableHeaderCell>
                     <asp:TableHeaderCell>Price</asp:TableHeaderCell>
                     <asp:TableHeaderCell>Weight</asp:TableHeaderCell>
-                    <asp:TableHeaderCell>Product Image</asp:TableHeaderCell>
-                    <asp:TableHeaderCell>Product Thumbnail</asp:TableHeaderCell>
+                    <asp:TableHeaderCell>Image</asp:TableHeaderCell>
+                    <asp:TableHeaderCell>Thumbnail</asp:TableHeaderCell>
                 </asp:TableHeaderRow>
             </asp:Table>
         </section>

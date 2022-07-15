@@ -12,8 +12,6 @@ namespace BradyHaden.Database
     public partial class InsertProducts : System.Web.UI.Page
     {
         private string CS;
-        private string ImagePath = "/Images/db-product-images/";
-        private string ThumbnailPath = "/Images/db-thumbnail-images/";
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -24,10 +22,7 @@ namespace BradyHaden.Database
             }
             else
             {
-                for (int i = 1; i < ProductTable.Rows.Count; i++)
-                {
-                    ProductTable.Rows.RemoveAt(i);
-                }
+                DatabaseUtility.ClearTableFromIndex(ProductsTable, 1);
                 ShowProductTable();
             }
         }
@@ -58,11 +53,7 @@ namespace BradyHaden.Database
 
         private void ShowProductTable()
         {
-            for (int i = 1; i < ProductTable.Rows.Count; i++)
-            {
-                ProductTable.Rows.RemoveAt(i);
-            }
-            ProductTable.Controls.Clear();
+            DatabaseUtility.ClearTableFromIndex(ProductsTable, 1);
             SqlConnection con = DatabaseUtility.CreateSqlConnection(CS);
             SqlCommand cmd = DatabaseUtility.CreateStoredProcedureCommand(con, "GetAllProducts");
             SqlDataReader reader;
@@ -71,7 +62,7 @@ namespace BradyHaden.Database
             {
                 con.Open();
                 reader = cmd.ExecuteReader();
-                DatabaseUtility.GenerateProductTableRows(reader, ProductTable);
+                DatabaseUtility.GenerateProductTableRows(reader, ProductsTable);
                 reader.Close();
                 DatabaseUtility.CloseSqlConnection(con);
             }

@@ -57,7 +57,7 @@ namespace BradyHaden.Database
          */
         public static void ClearTableFromIndex(Table table, int startIndex)
         {
-            for (int i = startIndex; i < table.Rows.Count; i++)
+            for (int i = table.Rows.Count - 1; i >= startIndex; i--)
             {
                 table.Rows.RemoveAt(i);
             }

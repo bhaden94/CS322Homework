@@ -15,30 +15,48 @@ namespace BradyHaden.Database
     {
 
         /// <summary>
-        /// ProductsGridView control.
+        /// ProductListDropDown control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView ProductsGridView;
+        protected global::System.Web.UI.WebControls.DropDownList ProductListDropDown;
 
         /// <summary>
-        /// CategorNameDropDown control.
+        /// ProductButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList CategorNameDropDown;
+        protected global::System.Web.UI.WebControls.Button ProductButton;
 
         /// <summary>
-        /// Sqldatasource1 control.
+        /// ProductLabel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource Sqldatasource1;
+        protected global::System.Web.UI.WebControls.Label ProductLabel;
+
+        /// <summary>
+        /// ProductID control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox ProductID;
+
+        /// <summary>
+        /// ProductName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox ProductName;
     }
 }

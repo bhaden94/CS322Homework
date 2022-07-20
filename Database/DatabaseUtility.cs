@@ -134,5 +134,24 @@ namespace BradyHaden.Database
                 ProductTable.Rows.Add(tempRow);
             }
         }
+
+        public static void GenerateProductDropDownList(SqlDataReader reader, DropDownList ProductListDropDown)
+        {
+            ProductListDropDown.Items.Clear();
+            ListItem firstItem = new ListItem();
+            firstItem.Text = "Select a Category";
+            firstItem.Value = "0";
+            ProductListDropDown.Items.Add(firstItem);
+            ProductListDropDown.SelectedIndex = 0;
+            while (reader.Read())
+            {
+                string id = reader["Id"].ToString();
+                string name = reader["productName"].ToString();
+                ListItem newItem = new ListItem();
+                newItem.Text = id + ". " + name;
+                newItem.Value = id;
+                ProductListDropDown.Items.Add(newItem);
+            }
+        }
     }
 }

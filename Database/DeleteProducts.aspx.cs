@@ -96,12 +96,6 @@ namespace BradyHaden.Database
 
         private void ShowProductList()
         {
-            ProductListDropDown.Items.Clear();
-            ListItem firstItem = new ListItem();
-            firstItem.Text = "Select a Category";
-            firstItem.Value = "0";
-            ProductListDropDown.Items.Add(firstItem);
-            ProductListDropDown.SelectedIndex = 0;
             SqlConnection con = DatabaseUtility.CreateSqlConnection(CS);
             SqlCommand cmd = DatabaseUtility.CreateStoredProcedureCommand(con, "GetAllProducts");
             SqlDataReader readerSelect;
@@ -109,15 +103,7 @@ namespace BradyHaden.Database
             {
                 con.Open();
                 readerSelect = cmd.ExecuteReader();
-                while (readerSelect.Read())
-                {
-                    string id = readerSelect["Id"].ToString();
-                    string name = readerSelect["productName"].ToString();
-                    ListItem newItem = new ListItem();
-                    newItem.Text = id + ". " + name;
-                    newItem.Value = id;
-                    ProductListDropDown.Items.Add(newItem);
-                }
+                DatabaseUtility.GenerateProductDropDownList(readerSelect, ProductListDropDown);
                 readerSelect.Close();
                 DatabaseUtility.CloseSqlConnection(con);
             }

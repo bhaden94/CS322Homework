@@ -16,6 +16,14 @@ p, li, address, th, span, label, td {
     color: #f7f7f7;
 }
 
+input, select, textarea {
+    color: #000;
+}
+
+    textarea:focus, input:focus {
+        color: #000;
+    }
+
 .bg-dark {
     background-color: #292b2c;
 }

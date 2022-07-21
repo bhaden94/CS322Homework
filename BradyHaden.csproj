@@ -182,6 +182,7 @@
     <Content Include="Database\DisplayProducts.aspx" />
     <Content Include="Database\index.aspx" />
     <Content Include="Database\InsertProducts.aspx" />
+    <Content Include="Database\ProductGridView.aspx" />
     <Content Include="Database\UpdateProducts.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
@@ -397,6 +398,13 @@
     </Compile>
     <Compile Include="Database\InsertProducts.aspx.designer.cs">
       <DependentUpon>InsertProducts.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Database\ProductGridView.aspx.cs">
+      <DependentUpon>ProductGridView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Database\ProductGridView.aspx.designer.cs">
+      <DependentUpon>ProductGridView.aspx</DependentUpon>
     </Compile>
     <Compile Include="Database\UpdateProducts.aspx.cs">
       <DependentUpon>UpdateProducts.aspx</DependentUpon>

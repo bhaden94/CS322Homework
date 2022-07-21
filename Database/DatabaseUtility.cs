@@ -8,6 +8,30 @@ using System.Web.UI.WebControls;
 
 namespace BradyHaden.Database
 {
+    public enum ProductColumn
+    {
+        Id,
+        productName,
+        categoryId,
+        categoryName,
+        description,
+        inventoryAmount,
+        cost,
+        price,
+        weight,
+        image,
+        thumbnail
+    }
+
+    public enum CategoryColumn
+    {
+        Id,
+        name,
+        description,
+        image,
+        thumbnail
+    }
+
     public static class DatabaseUtility
     {
         private static string ImagePath = "/Images/db-product-images/";

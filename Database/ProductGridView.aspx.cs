@@ -11,6 +11,11 @@ namespace BradyHaden.Database
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            GridView1.HeaderRow.TableSection = TableRowSection.TableHeader;
+        }
+
+        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
         }
     }

@@ -11,5 +11,6 @@
         <li><a runat="server" href="~/Database/DeleteProducts">DeleteProducts</a></li>
         <li><a runat="server" href="~/Database/InsertProducts">InsertProducts</a></li>
         <li><a runat="server" href="~/Database/UpdateProducts">UpdateProducts</a></li>
+        <li><a runat="server" href="~/Database/ProductGridView">ProductGridView</a></li>
     </ul>
 </asp:Content>

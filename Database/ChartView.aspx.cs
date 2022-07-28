@@ -13,5 +13,10 @@ namespace BradyHaden.Database
         {
 
         }
+
+        protected void Chart2_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
